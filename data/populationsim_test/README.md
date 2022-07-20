@@ -4,6 +4,8 @@
 
 Note that the dataset is far from reality, and it can only be used for study purpose
 
+The inputs and output using this dataset are shown below: 
+
 <p align="center">
   <img src="populationsim_Example.PNG" width="1000" title="hover text">
 </p>
