@@ -1,0 +1,184 @@
+20/07/2022 18:19:31 - INFO - activitysim - Read logging configuration from: configs/logging.yaml
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING configs_dir: configs
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING settings_file_name: settings.yaml
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING data_dir: data
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING output_dir: output
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING multiprocess: None
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING num_processes: None
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING resume_after: None
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING GROUP_BY_INCIDENCE_SIGNATURE: True
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING INTEGERIZE_WITH_BACKSTOPPED_CONTROLS: True
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING SUB_BALANCE_WITH_FLOAT_SEED_WEIGHTS: False
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING meta_control_data: None
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING control_file_name: controls.csv
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING USE_CVXPY: False
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - SETTING USE_SIMUL_INTEGERIZER: True
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - ENV MKL_NUM_THREADS: None
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - ENV OMP_NUM_THREADS: None
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - ENV OPENBLAS_NUM_THREADS: None
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - NUMPY blas_mkl_info libraries: ['mkl_rt', 'pthread']
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - NUMPY blas_opt_info libraries: ['mkl_rt', 'pthread']
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - NUMPY lapack_mkl_info libraries: ['mkl_rt', 'pthread']
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - NUMPY lapack_opt_info libraries: ['mkl_rt', 'pthread']
+20/07/2022 18:19:31 - INFO - activitysim.cli.run - run single process simulation
+20/07/2022 18:19:31 - DEBUG - activitysim.core.random - Set random seed base to 0
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - open_pipeline - new, empty pipeline
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - opened pipeline_store output/pipeline.h5
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint init timestamp 2022-07-20 18:19:31.772041
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - open_pipeline complete
+20/07/2022 18:19:31 - INFO - activitysim.core.tracing - Time to execute open_pipeline : 0.009 seconds (0.0 minutes)
+20/07/2022 18:19:31 - INFO - activitysim.core.tracing - Time to execute preload_injectables : 0.002 seconds (0.0 minutes)
+20/07/2022 18:19:31 - INFO - activitysim.core.pipeline - #run_model running step input_pre_processor
+20/07/2022 18:19:31 - INFO - populationsim.steps.input_pre_processor - Using table list: [{'tablename': 'households', 'filename': 'seed_households.csv', 'index_col': 'SERIALNO', 'column_map': {'HHNUM': 'hh_id'}}, {'tablename': 'persons', 'filename': 'seed_persons.csv', 'column_map': {'HHNUM': 'hh_id'}}, {'tablename': 'geo_cross_walk', 'filename': 'geo_cross_walk.csv'}, {'tablename': 'TAZ_control_data', 'filename': 'control_totals_taz.csv'}]
+20/07/2022 18:19:31 - INFO - activitysim.core.input - Reading CSV file data/seed_households.csv
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - raw households table size: (3, 7) 296 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - renaming columns: {'HHNUM': 'hh_id'}
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - households table columns: ['RT' 'hh_id' 'WGTP' 'PUMA' 'NP' 'HHINC']
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - households table size: (3, 6) 168 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - households index name: SERIALNO
+20/07/2022 18:19:31 - INFO - populationsim.steps.input_pre_processor - registering table households
+20/07/2022 18:19:31 - INFO - activitysim.core.input - Reading CSV file data/seed_persons.csv
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - raw persons table size: (9, 6) 560 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - renaming columns: {'HHNUM': 'hh_id'}
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - persons table columns: ['RT' 'SERIALNO' 'hh_id' 'PUMA' 'POPOC' 'POPAG']
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - persons table size: (9, 6) 560 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - persons index name: None
+20/07/2022 18:19:31 - INFO - populationsim.steps.input_pre_processor - registering table persons
+20/07/2022 18:19:31 - INFO - activitysim.core.input - Reading CSV file data/geo_cross_walk.csv
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - raw geo_cross_walk table size: (2, 3) 176 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - geo_cross_walk table columns: ['TAZ' 'PUMA' 'REGION']
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - geo_cross_walk table size: (2, 3) 176 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - geo_cross_walk index name: None
+20/07/2022 18:19:31 - INFO - populationsim.steps.input_pre_processor - registering table geo_cross_walk
+20/07/2022 18:19:31 - INFO - activitysim.core.input - Reading CSV file data/control_totals_taz.csv
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - raw TAZ_control_data table size: (2, 12) 320 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - TAZ_control_data table columns: ['PUMA' 'TAZ' 'HHBASE' 'POPBASE' 'HHSIZE1' 'HHSIZE2' 'HHINC1' 'HHINC2'
+ 'POPOC1' 'POPOC2' 'POPAG1' 'POPAG2']
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - TAZ_control_data table size: (2, 12) 320 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.input - TAZ_control_data index name: None
+20/07/2022 18:19:31 - INFO - populationsim.steps.input_pre_processor - registering table TAZ_control_data
+20/07/2022 18:19:31 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'input_pre_processor' : 0.02 seconds (0.0 minutes)
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint input_pre_processor timestamp 2022-07-20 18:19:31.808842
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'households' (3, 6) 168 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'persons' (9, 6) 560 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'geo_cross_walk' (2, 3) 176 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint 'input_pre_processor' table 'TAZ_control_data' (2, 12) 320 B
+20/07/2022 18:19:31 - INFO - activitysim.core.pipeline - #run_model running step setup_data_structures
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - Reading control file configs/controls.csv
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - dropped 0 households not in seed zones
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - kept 3 households in seed zones
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - rewrap table households inplace=False
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - rewrap table persons inplace=False
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - control target num_hh
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.WGTP > 0) & (households.WGTP < np.inf)
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - control target hs1
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.NP>=1) & (households.NP<=2)
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - control target hs2
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression households.NP>2
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - control target hi1
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINC>=-999999) & (households.HHINC<=3000)
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - control target hi2
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table households
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (households.HHINC>3000) & (households.HHINC<99999999)
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - control target oc1
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table persons
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression persons.POPOC==1
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - control target oc2
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table persons
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression persons.POPOC==2
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - control target ag1
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table persons
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (persons.POPAG>=-999999) & (persons.POPAG<=30)
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - control target ag2
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.seed_table persons
+20/07/2022 18:19:31 - DEBUG - populationsim.steps.setup_data_structures - control_row.expression (persons.POPAG>30) & (persons.POPAG<=99999999)
+20/07/2022 18:19:31 - INFO - populationsim.steps.setup_data_structures - grouped incidence table has 3 entries, ungrouped has 3
+20/07/2022 18:19:31 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'setup_data_structures' : 0.039 seconds (0.0 minutes)
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint setup_data_structures timestamp 2022-07-20 18:19:31.892611
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'crosswalk' (2, 2) 48 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'control_spec' (9, 6) 560 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'PUMA_controls' (1, 9) 80 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'TAZ_controls' (2, 9) 160 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'households' (3, 6) 168 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'persons' (9, 6) 560 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'household_groups' (3, 3) 96 B
+20/07/2022 18:19:31 - DEBUG - activitysim.core.pipeline - add_checkpoint 'setup_data_structures' table 'incidence_table' (3, 13) 440 B
+20/07/2022 18:19:31 - INFO - activitysim.core.pipeline - #run_model running step initial_seed_balancing
+20/07/2022 18:19:31 - INFO - populationsim.steps.initial_seed_balancing - initial_seed_balancing seed id 600
+20/07/2022 18:19:32 - INFO - populationsim.steps.initial_seed_balancing - seed_balancer status: {'converged': True, 'iter': 301, 'delta': 1.0372734998767101e-10, 'max_gamma_dif': 7.166125470803308e-10}
+20/07/2022 18:19:32 - INFO - populationsim.steps.initial_seed_balancing - Total balanced weights for seed 600 = 13.009664135005597
+20/07/2022 18:19:32 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'initial_seed_balancing' : 0.055 seconds (0.0 minutes)
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint initial_seed_balancing timestamp 2022-07-20 18:19:32.013917
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint 'initial_seed_balancing' table 'PUMA_weights' (3, 4) 224 B
+20/07/2022 18:19:32 - INFO - activitysim.core.pipeline - #run_model running step meta_control_factoring
+20/07/2022 18:19:32 - WARNING - populationsim.steps.meta_control_factoring - meta_control_factoring: no meta targets so nothing to do
+20/07/2022 18:19:32 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'meta_control_factoring' : 0.001 seconds (0.0 minutes)
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint meta_control_factoring timestamp 2022-07-20 18:19:32.038012
+20/07/2022 18:19:32 - INFO - activitysim.core.pipeline - #run_model running step final_seed_balancing
+20/07/2022 18:19:32 - WARNING - populationsim.steps.final_seed_balancing - no need for final_seed_balancing because no meta controls
+20/07/2022 18:19:32 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'final_seed_balancing' : 0.002 seconds (0.0 minutes)
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint final_seed_balancing timestamp 2022-07-20 18:19:32.054738
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - rewrap table PUMA_weights inplace=True
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint 'final_seed_balancing' table 'PUMA_weights' (3, 5) 248 B
+20/07/2022 18:19:32 - INFO - activitysim.core.pipeline - #run_model running step integerize_final_seed_weights
+20/07/2022 18:19:32 - INFO - populationsim.steps.integerize_final_seed_weights - integerize_final_seed_weights seed id 600
+20/07/2022 18:19:32 - DEBUG - populationsim.integerizer - Integerizer: 1 out of 3 different from round
+20/07/2022 18:19:32 - DEBUG - populationsim.integerizer - Integerizer status for unbackstopped PUMA_600: OPTIMAL
+20/07/2022 18:19:32 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'integerize_final_seed_weights' : 0.033 seconds (0.0 minutes)
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint integerize_final_seed_weights timestamp 2022-07-20 18:19:32.117413
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - rewrap table PUMA_weights inplace=True
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint 'integerize_final_seed_weights' table 'PUMA_weights' (3, 6) 272 B
+20/07/2022 18:19:32 - INFO - activitysim.core.pipeline - #run_model running step sub_balancing
+20/07/2022 18:19:32 - INFO - populationsim.steps.sub_balancing - balancing 1/1 seed 600, PUMA 600
+20/07/2022 18:19:32 - DEBUG - populationsim.simul_balancer - 2 positive weight rows out of 3
+20/07/2022 18:19:32 - DEBUG - populationsim.simul_balancer - np_simul_balancer sample_count 2 control_count 9 zone_count 2
+20/07/2022 18:19:32 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 0 delta 1.1283372851142135 max_gamma_dif 0.9974543911752227
+20/07/2022 18:19:32 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 100 delta 0.0008623963497302878 max_gamma_dif 0.044033481611387204
+20/07/2022 18:19:32 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 200 delta 1.161666414661866e-05 max_gamma_dif 0.0012318195024265677
+20/07/2022 18:19:32 - DEBUG - populationsim.simul_balancer - np_simul_balancer iteration 300 delta 1.3149636934883802e-10 max_gamma_dif 4.473321166309496e-05
+20/07/2022 18:19:32 - DEBUG - populationsim.steps.sub_balancing - PUMA 600 converged False iter 301
+20/07/2022 18:19:32 - INFO - populationsim.multi_integerizer - omitting 1 zero weight rows out of 3
+20/07/2022 18:19:32 - INFO - populationsim.multi_integerizer - restoring 1 zero weight rows
+20/07/2022 18:19:32 - DEBUG - populationsim.multi_integerizer - SimulIntegerizer status OPTIMAL
+20/07/2022 18:19:32 - INFO - populationsim.multi_integerizer - do_simul_integerizing succeeded for PUMA_600 status OPTIMAL. 
+20/07/2022 18:19:32 - INFO - populationsim.steps.sub_balancing - adding table TAZ_weights
+20/07/2022 18:19:32 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'sub_balancing.geography=TAZ' : 0.162 seconds (0.0 minutes)
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint sub_balancing.geography=TAZ timestamp 2022-07-20 18:19:32.307990
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint 'sub_balancing.geography=TAZ' table 'TAZ_weights' (6, 5) 288 B
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint 'sub_balancing.geography=TAZ' table 'TAZ_weights_sparse' (4, 5) 192 B
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint 'sub_balancing.geography=TAZ' table 'trace_TAZ_weights' (3, 5) 144 B
+20/07/2022 18:19:32 - INFO - activitysim.core.pipeline - #run_model running step expand_households
+20/07/2022 18:19:32 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'expand_households' : 0.006 seconds (0.0 minutes)
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint expand_households timestamp 2022-07-20 18:19:32.350620
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint 'expand_households' table 'expanded_household_ids' (11, 3) 352 B
+20/07/2022 18:19:32 - INFO - activitysim.core.pipeline - #run_model running step write_data_dictionary
+20/07/2022 18:19:32 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'write_data_dictionary' : 0.121 seconds (0.0 minutes)
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint write_data_dictionary timestamp 2022-07-20 18:19:32.494160
+20/07/2022 18:19:32 - INFO - activitysim.core.pipeline - #run_model running step summarize
+20/07/2022 18:19:32 - INFO - populationsim.steps.summarize - saving summary table summary_PUMA_600
+20/07/2022 18:19:32 - INFO - populationsim.steps.summarize - saving summary table summary_TAZ_aggregate
+20/07/2022 18:19:32 - INFO - populationsim.steps.summarize - saving summary table summary_TAZ_PUMA
+20/07/2022 18:19:32 - INFO - populationsim.steps.summarize - saving summary table summary_TAZ
+20/07/2022 18:19:32 - INFO - populationsim.steps.summarize - saving summary table summary_hh_weights
+20/07/2022 18:19:32 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'summarize' : 0.03 seconds (0.0 minutes)
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint summarize timestamp 2022-07-20 18:19:32.543524
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint 'summarize' table 'summary_PUMA_600' (9, 6) 504 B
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint 'summarize' table 'summary_TAZ_aggregate' (3, 7) 192 B
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint 'summarize' table 'summary_TAZ_PUMA' (1, 29) 240 B
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint 'summarize' table 'summary_TAZ' (2, 29) 480 B
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint 'summarize' table 'summary_hh_weights' (3, 4) 224 B
+20/07/2022 18:19:32 - INFO - activitysim.core.pipeline - #run_model running step write_tables
+20/07/2022 18:19:32 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'write_tables' : 0.002 seconds (0.0 minutes)
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint write_tables timestamp 2022-07-20 18:19:32.623360
+20/07/2022 18:19:32 - INFO - activitysim.core.pipeline - #run_model running step write_synthetic_population
+20/07/2022 18:19:32 - DEBUG - activitysim.core.tracing - Time to execute #run_model completed step 'write_synthetic_population' : 0.006 seconds (0.0 minutes)
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - add_checkpoint write_synthetic_population timestamp 2022-07-20 18:19:32.649236
+20/07/2022 18:19:32 - INFO - activitysim.core.tracing - Time to execute run_model (12 models) : 0.885 seconds (0.0 minutes)
+20/07/2022 18:19:32 - DEBUG - activitysim.core.pipeline - close_pipeline
+20/07/2022 18:19:32 - INFO - activitysim.core.mem - MainProcess high water mark rss: 170_328_064 (170.3 MB) timestamp: 20/07/2022 18:19:32 label:pipeline.run after summarize
+20/07/2022 18:19:32 - INFO - activitysim.core.mem - MainProcess high water mark uss: 163_471_360 (163.5 MB) timestamp: 20/07/2022 18:19:32 label:pipeline.run_model write_tables finished
+20/07/2022 18:19:32 - INFO - activitysim.core.tracing - Time to execute all models : 0.901 seconds (0.0 minutes)

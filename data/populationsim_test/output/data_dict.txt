@@ -1,0 +1,189 @@
+###
+### geo_cross_walk (2, 3)
+###
+
+column_name                   dtype     checkpoint                     
+TAZ                           int64     input_pre_processor            
+PUMA                          int64     input_pre_processor            
+REGION                        int64     input_pre_processor            
+
+###
+### TAZ_control_data (2, 12)
+###
+
+column_name                   dtype     checkpoint                     
+PUMA                          int64     input_pre_processor            
+TAZ                           int64     input_pre_processor            
+HHBASE                        int64     input_pre_processor            
+POPBASE                       int64     input_pre_processor            
+HHSIZE1                       int64     input_pre_processor            
+HHSIZE2                       int64     input_pre_processor            
+HHINC1                        int64     input_pre_processor            
+HHINC2                        int64     input_pre_processor            
+POPOC1                        int64     input_pre_processor            
+POPOC2                        int64     input_pre_processor            
+POPAG1                        int64     input_pre_processor            
+POPAG2                        int64     input_pre_processor            
+
+###
+### crosswalk (2, 2)
+###
+
+column_name                   dtype     checkpoint                     
+PUMA                          int64     setup_data_structures          
+TAZ                           int64     setup_data_structures          
+
+###
+### control_spec (9, 6)
+###
+
+column_name                   dtype     checkpoint                     
+target                        object    setup_data_structures          
+geography                     object    setup_data_structures          
+seed_table                    object    setup_data_structures          
+importance                    int64     setup_data_structures          
+control_field                 object    setup_data_structures          
+expression                    object    setup_data_structures          
+
+###
+### PUMA_controls (1, 9)
+###
+
+column_name                   dtype     checkpoint                     
+PUMA                          int64     setup_data_structures          
+num_hh                        int64     setup_data_structures          
+hs1                           int64     setup_data_structures          
+hs2                           int64     setup_data_structures          
+hi1                           int64     setup_data_structures          
+hi2                           int64     setup_data_structures          
+oc1                           int64     setup_data_structures          
+oc2                           int64     setup_data_structures          
+ag1                           int64     setup_data_structures          
+ag2                           int64     setup_data_structures          
+
+###
+### TAZ_controls (2, 9)
+###
+
+column_name                   dtype     checkpoint                     
+TAZ                           int64     setup_data_structures          
+num_hh                        int64     setup_data_structures          
+hs1                           int64     setup_data_structures          
+hs2                           int64     setup_data_structures          
+hi1                           int64     setup_data_structures          
+hi2                           int64     setup_data_structures          
+oc1                           int64     setup_data_structures          
+oc2                           int64     setup_data_structures          
+ag1                           int64     setup_data_structures          
+ag2                           int64     setup_data_structures          
+
+###
+### households (3, 6)
+###
+
+column_name                   dtype     checkpoint                     
+SERIALNO                      int64     input_pre_processor            
+RT                            object    input_pre_processor            
+hh_id                         int64     input_pre_processor            
+WGTP                          int64     input_pre_processor            
+PUMA                          int64     input_pre_processor            
+NP                            int64     input_pre_processor            
+HHINC                         int64     input_pre_processor            
+
+###
+### persons (9, 6)
+###
+
+column_name                   dtype     checkpoint                     
+RT                            object    input_pre_processor            
+SERIALNO                      int64     input_pre_processor            
+hh_id                         int64     input_pre_processor            
+PUMA                          int64     input_pre_processor            
+POPOC                         int64     input_pre_processor            
+POPAG                         int64     input_pre_processor            
+
+###
+### household_groups (3, 3)
+###
+
+column_name                   dtype     checkpoint                     
+SERIALNO                      int64     setup_data_structures          
+group_id                      int64     setup_data_structures          
+sample_weight                 int64     setup_data_structures          
+hh_id                         int64     setup_data_structures          
+
+###
+### incidence_table (3, 13)
+###
+
+column_name                   dtype     checkpoint                     
+SERIALNO                      int64     setup_data_structures          
+num_hh                        int64     setup_data_structures          
+hs1                           int64     setup_data_structures          
+hs2                           int64     setup_data_structures          
+hi1                           int64     setup_data_structures          
+hi2                           int64     setup_data_structures          
+oc1                           int64     setup_data_structures          
+oc2                           int64     setup_data_structures          
+ag1                           int64     setup_data_structures          
+ag2                           int64     setup_data_structures          
+PUMA                          int64     setup_data_structures          
+sample_weight                 int64     setup_data_structures          
+group_size                    int64     setup_data_structures          
+group_id                      int64     setup_data_structures          
+
+###
+### PUMA_weights (3, 6)
+###
+
+column_name                   dtype     checkpoint                     
+SERIALNO                      int64     initial_seed_balancing         
+PUMA                          int64     initial_seed_balancing         
+preliminary_balanced_weight   float64   initial_seed_balancing         
+sample_weight                 int64     initial_seed_balancing         
+hh_id                         int64     initial_seed_balancing         
+balanced_weight               float64   final_seed_balancing           
+integer_weight                int64     integerize_final_seed_weights  
+
+###
+### TAZ_weights (6, 5)
+###
+
+column_name                   dtype     checkpoint                     
+hh_id                         int64     sub_balancing.geography=TAZ    
+TAZ                           int64     sub_balancing.geography=TAZ    
+balanced_weight               float64   sub_balancing.geography=TAZ    
+integer_weight                int64     sub_balancing.geography=TAZ    
+PUMA                          int64     sub_balancing.geography=TAZ    
+
+###
+### TAZ_weights_sparse (4, 5)
+###
+
+column_name                   dtype     checkpoint                     
+hh_id                         int64     sub_balancing.geography=TAZ    
+TAZ                           int64     sub_balancing.geography=TAZ    
+balanced_weight               float64   sub_balancing.geography=TAZ    
+integer_weight                int64     sub_balancing.geography=TAZ    
+PUMA                          int64     sub_balancing.geography=TAZ    
+
+###
+### trace_TAZ_weights (3, 5)
+###
+
+column_name                   dtype     checkpoint                     
+hh_id                         int64     sub_balancing.geography=TAZ    
+TAZ                           int64     sub_balancing.geography=TAZ    
+balanced_weight               float64   sub_balancing.geography=TAZ    
+integer_weight                int64     sub_balancing.geography=TAZ    
+PUMA                          int64     sub_balancing.geography=TAZ    
+
+###
+### expanded_household_ids (11, 3)
+###
+
+column_name                   dtype     checkpoint                     
+PUMA                          int64     expand_households              
+TAZ                           int64     expand_households              
+hh_id                         int64     expand_households              
+

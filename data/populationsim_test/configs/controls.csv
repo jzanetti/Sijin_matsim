@@ -1,0 +1,10 @@
+target,geography,seed_table,importance,control_field,expression
+num_hh,TAZ,households,30,HHBASE,(households.WGTP > 0) & (households.WGTP < np.inf)
+hs1,TAZ,households,10,HHSIZE1,(households.NP>=1) & (households.NP<=2)
+hs2,TAZ,households,10,HHSIZE2,households.NP>2
+hi1,TAZ,households,10,HHINC1,(households.HHINC>=-999999) & (households.HHINC<=3000)
+hi2,TAZ,households,10,HHINC2,(households.HHINC>3000) & (households.HHINC<99999999)
+oc1,TAZ,persons,10,POPOC1,persons.POPOC==1
+oc2,TAZ,persons,10,POPOC2,persons.POPOC==2
+ag1,TAZ,persons,10,POPAG1,(persons.POPAG>=-999999) & (persons.POPAG<=30)
+ag2,TAZ,persons,10,POPAG2,(persons.POPAG>30) & (persons.POPAG<=99999999)
